@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :asc)
   end
 
   def show
@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
    def new
       @post = Post.new
-      @post.post_id = params[:post_id]
+      @post.user_id = params[:user_id]
 
    end
 
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require( :post ).permit( :title, :description, :image )
+    params.require( :post ).permit( :title, :description, :image, :user_id )
   end
 
 end
