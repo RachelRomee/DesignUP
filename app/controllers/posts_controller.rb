@@ -10,6 +10,8 @@ class PostsController < ApplicationController
 
    def new
       @post = Post.new
+      @post.post_id = params[:post_id]
+
    end
 
    def create
@@ -27,7 +29,5 @@ class PostsController < ApplicationController
   def post_params
     params.require( :post ).permit( :title, :description, :image )
   end
-
-  Post.create(title: "Cuba Sunrise", image: "cubasunrise.jpg", description: "Illustration of a car in the sunrise", user_id: jona.id)
 
 end
