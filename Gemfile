@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'cloudinary'
+
 gem 'devise', '~> 3.5'
 
 gem 'carrierwave'
