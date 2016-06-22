@@ -1,5 +1,6 @@
 <h1>Explore Designs</h1>
 
+
 <% @posts.each do |post| %>
     <a href="<%= post_path post%>">
     <%= image_tag(post.image.thumbnail.url :class => "thumbnail inline") %> <br>
