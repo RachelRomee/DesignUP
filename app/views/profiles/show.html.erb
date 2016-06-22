@@ -1,11 +1,14 @@
 <h1>Profiles#show</h1>
 
+<%= link_to "Edit", edit_profile_path(@profile), class: "button", style: "float: right" %>
+
+
 <%= image_tag @profile.image %>
 
 <!-- does this work? -->
-<%= @profile.user %>
-<%= @profile.expertise %>
-<%= @profile.city %>
-<%= @profile.country %>
-<%= @profile.website %>
+<p><%= @profile.user %></p>
+<p><%= @profile.expertise %></p>
+<p><%= @profile.city %></p>
+<p><%= @profile.country %></p>
+<p><%= @profile.website %></p>
 <%= @profile.bio %>
