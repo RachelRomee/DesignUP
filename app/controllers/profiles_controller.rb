@@ -7,4 +7,24 @@ class ProfilesController < ApplicationController
   def show
     @profile = Profile.find(params[:id])
   end
+
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
+  def update
+    @profile = Profile.find( params[:id] )
+
+    if @profile.update_attributes( post_params )
+      redirect_to @profile
+    else
+      render 'edit'
+    end
+  end
+
+   private
+
+   def post_params
+     params.require( :profile ).permit( :image, :expertise, :city, :country, :website, :bio )
+   end
 end
