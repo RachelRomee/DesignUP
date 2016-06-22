@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-jona = User.create(email: "jona@design.up", password: "hihihi")
-garrett = User.create(email: "garrett@design.up", password: "hihihihi")
-julie = User.create(email: "julie@design.up", password: "hihihihi")
-markus = User.create(email: "markus@design.up", password: "hihihihi")
+jona = User.create(email: "jona@design.up", password: "hihihi", name: "Jona Dinges")
+garrett = User.create(email: "garrett@design.up", password: "hihihihi", name: "Garrett Miller")
+julie = User.create(email: "julie@design.up", password: "hihihihi", name: "Julie Johnson")
+markus = User.create(email: "markus@design.up", password: "hihihihi", name: "Markus Magnusson")
 
 #image1 = Image.create
 
