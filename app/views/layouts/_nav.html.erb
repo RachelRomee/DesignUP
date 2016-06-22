@@ -1,0 +1,26 @@
+<!-- Foundation topbar -->
+<div class="top-bar">
+  <!-- Left menu -->
+  <div class="top-bar-left">
+      <ul class="menu">
+        <h4 class="top-bar-title menu-brand">DesignUP</h1>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Posts", posts_path %></li>
+          <li><%= link_to "Profiles", profiles_path %></li>
+      </ul>
+  </div>
+  <!-- Right menu -->
+  <div class="top-bar-right">
+    <ul class="menu">
+      <!-- Search bar -->
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+      <!-- Login, logout and username link to profile -->
+      <% if !user_signed_in? %>
+          <li><%= link_to "Log In", new_user_session_path %></li>
+      <% else %>
+          <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
+    <% end %>
+    </ul>
+  </div>
+</div>

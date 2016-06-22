@@ -25,7 +25,7 @@ Post.create(title: "Bearhug", image: "bearhug.gif", description: "Animation", us
 
 #Avatar.create
 
-Profile.create(user_id: jona.id, image: "jona.png", expertise: "Illustration, Game Art, UI/UX", city: "Berlin", country: "Germany", website: "http://jona.com", bio: "I am super creative")
-Profile.create(user_id: garrett.id, image: "garrett.png", expertise: "Design, Photography", city: "Washington DC", country: "USA", website: "http://heyitsgarrett.com/", bio: "I am super creative")
-Profile.create(user_id: julie.id, image: "julie.png", expertise: "Illustration, Design", city: "Moscow", country: "Russia", website: "http://julie.com", bio: "I am super creative")
-Profile.create(user_id: markus.id, image: "markus.png", expertise: "Animation, Motion Graphics", city: "Stockholm", country: "Sweden", website: "http://markusmagnusson.tv/", bio: "I am super creative")
+Profile.create(user: jona, image: "jona.png", expertise: "Illustration, Game Art, UI/UX", city: "Berlin", country: "Germany", website: "http://jona.com", bio: "I am super creative")
+Profile.create(user: garrett, image: "garrett.png", expertise: "Design, Photography", city: "Washington DC", country: "USA", website: "http://heyitsgarrett.com/", bio: "I am super creative")
+Profile.create(user: julie, image: "julie.png", expertise: "Illustration, Design", city: "Moscow", country: "Russia", website: "http://julie.com", bio: "I am super creative")
+Profile.create(user: markus, image: "markus.png", expertise: "Animation, Motion Graphics", city: "Stockholm", country: "Sweden", website: "http://markusmagnusson.tv/", bio: "I am super creative")

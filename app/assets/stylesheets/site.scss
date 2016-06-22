@@ -1,3 +1,46 @@
-// Place all the styles related to the Site controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Log in Formulier
+// -------------------------
+
+// Default medium-gray color
+$medium-gray: #cacaca;
+// Default global padding
+$global-padding: 1rem;
+// Global value used for all elements that have a border radius.
+$global-radius: 3px;
+
+// Setting the form border color
+$form-border-color: $medium-gray;
+// Setting the form padding
+$form-padding: $global-padding;
+// Setting the form border radius
+$form-radius: $global-radius;
+
+.log-in-form {
+  border: 1px solid $form-border-color;
+  padding: $form-padding;
+  border-radius: $form-radius;
+}
+
+// Gradient Button
+// -------------------------
+
+$gradient: linear-gradient(45deg, pink, skyblue);
+$gradient2: linear-gradient(45deg, #2ecc71, dodgerblue);
+
+.button-special  {
+  color: transparent;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  border: 4px solid transparent;
+  border-image: $gradient;
+  border-image-slice: 1;
+  background: $gradient;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-image: $gradient2;
+    background: $gradient2;
+  }
+}
