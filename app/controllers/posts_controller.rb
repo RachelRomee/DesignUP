@@ -1,8 +1,19 @@
 class PostsController < ApplicationController
+  respond_to :html, :js
+
+
   def index
     @posts = Post.order(created_at: :desc)
   end
 
+
+def getfollowing
+    @posts = Post.order(created_at: :desc)
+    respond_to do |format|
+      format.html
+      format.js { render json: @posts }
+    end
+  end
 
 
   def show
