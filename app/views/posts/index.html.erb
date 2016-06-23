@@ -1,7 +1,6 @@
 <% if can? :update, :new, :create, Post %>
-<%= link_to "New Post", new_post_path, style: "float: right" %>
-
 <% end %>
+
 <div class = "large-6 columns center">
 <h1> Explore </h1>
   <% @posts.each do |post| %>
