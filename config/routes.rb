@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  get 'comments/create'
+
   root 'site#index'
   devise_for :users
   resources :profiles

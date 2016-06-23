@@ -1,3 +1,8 @@
+<% if can? :update, :new, :create, Post %>
+<%= link_to "New Post", new_post_path, style: "float: right" %>
+
+<% end %>
+
 <h1>Explore</h1>
 <% @posts.each do |post| %>
     <a href="<%= post_path post%>">
@@ -14,5 +19,3 @@
       <!-- End Like Button -->
     </a>
 <% end %>
-
- <%= link_to "New Post", new_post_path, style: "float: right" %>
