@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
 
-    before_action :authenticate_user!
 
   def index
     @posts = Post.order(created_at: :asc)
+
   end
 
   def show
@@ -13,12 +13,16 @@ class PostsController < ApplicationController
 
    def new
       @post = Post.new
+      authorize! :new, @post
+
       @post.user_id = params[:user_id]
    end
 
    def create
       post = Post.new( post_params )
       @post.user = current_user
+      authorize! :create, @post
+
 
       if post.save
          redirect_to posts_path
@@ -33,6 +37,7 @@ class PostsController < ApplicationController
 
    def update
      @post = Post.find( params[:id] )
+     authorize! :update, post
 
      if @post.update_attributes( post_params )
        redirect_to @post
@@ -43,10 +48,10 @@ class PostsController < ApplicationController
 
    def user
      @user = User.find( params[:user_id] )
-
      @posts = Post.where( user: @user ).order( created_at: :desc )
-
      @likes = @user.likes.joins( :post ).order( "posts.created_at DESC" )
+     authorize! :read, user
+
   end
 
     private

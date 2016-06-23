@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'cancancan'
+
+
 gem 'cloudinary'
 
 gem 'devise', '~> 3.5'
