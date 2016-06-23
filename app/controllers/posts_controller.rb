@@ -57,7 +57,7 @@ end
 
 private
   def post_params
-      params.require( :post ).permit( :title, :description, :image, :user_id, user_attributes:[:name], comment_attributes: [:comment] )
+      params.require( :post ).permit( :title, :description, :image, :user_id, user_attributes:[:name], comments_attributes: [:comment] )
   end
 
 
