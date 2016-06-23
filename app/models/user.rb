@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
                                   foreign_key: "follower_id",
                                   # destroying a user should destroy follow relationship
                                   dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed                                
 
 # validate name column in user table
   validates :name, presence: true
