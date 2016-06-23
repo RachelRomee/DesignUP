@@ -1,2 +1,18 @@
-<h1>Posts#show</h1>
-<p>Chiho is working on this page</p>
+<%= link_to "Back", posts_path, style: "float:left;"  %>
+<br>
+<br>
+
+<div class="row">
+    <div class="small-8 columns">
+      <div class="column">
+        <%= image_tag(@post.image) %>
+        </div>
+    </div>
+    <div class="small-4 columns">
+    <h2 id="header-posts">My Cool Pictures</h2>
+    <p><%=  @post.description %></p>
+    <p><button type="button" class="success button">Likes</button><p>
+          <p><button type="button" class="success button">Follow</button><p>
+<%= Other design %>
+</div>
+</div>
