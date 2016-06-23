@@ -49,9 +49,7 @@ class PostsController < ApplicationController
    @likes = @user.likes.joins( :post ).order( "posts.created_at DESC" )
 end
 
-def current_user?(user)
-   user == current_user
-end
+
 
 private
 
