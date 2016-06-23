@@ -2,14 +2,11 @@ source 'https://rubygems.org'
 
 gem 'cancancan'
 
-
 gem 'cloudinary'
 
 gem 'devise', '~> 3.5'
 
 gem 'carrierwave'
-
-
 
 gem 'foundation-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
