@@ -20,4 +20,3 @@ class Ability < ActiveRecord::Base
     end
   end
 end
-end
