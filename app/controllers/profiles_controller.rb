@@ -12,10 +12,12 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:id])
+    authorize! :edit, profile
   end
 
   def update
     @profile = Profile.find( params[:id] )
+    authorize! :update, profile
 
     if @profile.update_attributes( post_params )
       redirect_to @profile

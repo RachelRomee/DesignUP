@@ -2,20 +2,24 @@
 <%= link_to "New Post", new_post_path, style: "float: right" %>
 
 <% end %>
+<div class = "large-6 columns center">
+<h1> Explore </h1>
+  <% @posts.each do |post| %>
+  <div class>
+      <a href="<%= post_path post%>">
+      <%= image_tag(post.image.thumbnail.url :class => "feed") %> <br>
+        <strong><%= post.title %><strong></a> - <em class = "pic-username"><%= post.user.name unless post.user.blank?%></em></p>
+          <!-- <a href="<%= post_path post%>"> <p><%= post.description %> </a> -->
 
-<h1>Explore</h1>
-<% @posts.each do |post| %>
-    <a href="<%= post_path post%>">
-    <%= image_tag(post.image.thumbnail.url :class => "thumbnail inline") %> <br>
-      <h2><%= post.title %></h2>
-      <p><%= post.description %><p>
-      <!-- Like button -->
-      <p>
-          <% liked = Like.find_by( post: post, user: current_user ) != nil %>
-          <% btn_color = liked ? "warning" : "default" %>
-          <%= link_to "ツ", post_likes_path( post ), method: :post, class: "button #{btn_color}", disabled: !user_signed_in? %>
-          <%= post.likes.count %>
-      </p>
-      <!-- End Like Button -->
-    </a>
-<% end %>
+        <p>
+            <% liked = Like.find_by( post: post, user: current_user ) != nil %>
+            <% btn_color = liked ? "warning" : "default" %>
+            <%= link_to "ツ", post_likes_path( post ), method: :post, class: "button #{btn_color}", disabled: !user_signed_in? %>
+            <%= post.likes.count %>
+        </p>
+        <!-- End Like Button -->
+      </a> </div>
+  <% end %>
+</ul>
+</div>
+</div>

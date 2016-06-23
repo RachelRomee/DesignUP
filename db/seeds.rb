@@ -8,7 +8,7 @@
 
 
 
-jona = User.create(email: "jona@design.up", password: "hihihi", name: "Jona Dinges")
+jona = User.create(email: "jona@design.up", password: "hihihihi", name: "Jona Dinges")
 garrett = User.create(email: "garrett@design.up", password: "hihihihi", name: "Garrett Miller")
 julie = User.create(email: "julie@design.up", password: "hihihihi", name: "Julie Johnson")
 markus = User.create(email: "markus@design.up", password: "hihihihi", name: "Markus Magnusson")

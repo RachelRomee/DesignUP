@@ -7,5 +7,8 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :posts
   has_many :comments
-  has_many :likes 
+  has_many :likes
+
+
+  accepts_nested_attributes_for :posts
 end
