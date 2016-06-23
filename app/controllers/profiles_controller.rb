@@ -26,6 +26,10 @@ class ProfilesController < ApplicationController
     end
   end
 
+  # def user
+  #   @user =
+  # end
+
    private
 
    def post_params

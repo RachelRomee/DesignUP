@@ -7,7 +7,7 @@
   <% @posts.each do |post| %>
   <div class>
       <a href="<%= post_path post%>">
-      <%= image_tag(post.image.thumbnail.url :class => "feed") %> <br>
+      <%= cl_image_tag(post.image.thumbnail.url :class => "feed") %> <br>
         <strong><%= post.title %><strong></a> - <em class = "pic-username"><%= post.user.name unless post.user.blank?%></em></p>
           <!-- <a href="<%= post_path post%>"> <p><%= post.description %> </a> -->
 

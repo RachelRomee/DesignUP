@@ -13,7 +13,7 @@ garrett = User.create(email: "garrett@design.up", password: "hihihihi", name: "G
 julie = User.create(email: "julie@design.up", password: "hihihihi", name: "Julie Johnson")
 markus = User.create(email: "markus@design.up", password: "hihihihi", name: "Markus Magnusson")
 
-cuba_sunrise = Post.create(title: "Cuba Sunrise", remote_image_url:"http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466597684/cubasunrise_grrpri.jpg", description: "Illustration of a car in the sunrise", user_id: jona.id)
+cuba_sunrise = Post.create(title: "Cuba Sunrise", remote_image_url: "http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466597684/cubasunrise_grrpri.jpg", description: "Illustration of a car in the sunrise", user_id: jona.id)
 chieftain = Post.create(title: "Chieftain", remote_image_url: "http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466597685/chieftain_rapfgk.jpg", description: "Illustration", user_id: jona.id)
 palm_springs = Post.create(title: "Palm Springs", remote_image_url: "http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466597685/palm-strings1_gq9lsi.jpg", description: "Illustration", user_id: jona.id)
 jeff = Post.create(title: "J E F F", remote_image_url: "http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466597684/jeff_vec4jg.png", description: "Illustration", user_id: garrett.id)
