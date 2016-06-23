@@ -14,12 +14,15 @@ class PostsController < ApplicationController
 
  def new
     @post = Post.new
+    authorize! :new, @post
     @post.user_id = params[:user_id]
+
  end
 
  def create
     post = Post.new( post_params )
     @post.user = current_user
+    authorize! :create, @post
 
     if post.save
        redirect_to posts_path
@@ -30,10 +33,12 @@ class PostsController < ApplicationController
 
  def edit
    @post = Post.find( params[:id] )
+   authorize! :edit, post
  end
 
  def update
    @post = Post.find( params[:id] )
+   authorize! :update, post
 
    if @post.update_attributes( post_params )
      redirect_to @post
