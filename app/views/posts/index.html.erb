@@ -14,8 +14,7 @@
         <p>
             <% liked = Like.find_by( post: post, user: current_user ) != nil %>
             <% btn_color = liked ? "warning" : "default" %>
-            <%= link_to "ツ", post_likes_path( post ), method: :post, class: "button #{btn_color}", disabled: !user_signed_in? %>
-            <%= post.likes.count %>
+            <%= link_to post.likes.count.to_s + " Likes", post_likes_path( post ), method: :post, class: "button #{btn_color}", disabled: !user_signed_in? %>
         </p>
         <!-- End Like Button -->
       </a> </div>
