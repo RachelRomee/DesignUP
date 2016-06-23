@@ -1,7 +1,7 @@
 <h1>Explore</h1>
 <% @posts.each do |post| %>
     <a href="<%= post_path post%>">
-    <%= image_tag(post.image.thumbnail.url :class => "thumbnail inline") %> <br>
+    <%= cl_image_tag(post.image.thumbnail.url :class => "thumbnail inline") %> <br>
       <h2><%= post.title %></h2>
       <p><%= post.description %><p>
     </a>
