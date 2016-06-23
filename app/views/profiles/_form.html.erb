@@ -1,5 +1,6 @@
 <!-- Form for adding profile info -->
 <%= form_for @profile do |f| %>
+<div><%= hidden_field_tag :user_id, :value => @post.user_id%>
 
   <!-- Row for complete form -->
   <div class="row">
