@@ -5,5 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile
-  has_many :posts       
+  has_many :posts
+  has_many :comments
+  has_many :likes 
 end

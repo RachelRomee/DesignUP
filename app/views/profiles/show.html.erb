@@ -1,14 +1,21 @@
 <h1>Profiles#show</h1>
 
+<!-- Should only be for own profile! -->
 <%= link_to "Edit", edit_profile_path(@profile), class: "button", style: "float: right" %>
 
 
 <%= image_tag @profile.image %>
 
-<!-- does this work? -->
 <p><%= @profile.user %></p>
 <p><%= @profile.expertise %></p>
 <p><%= @profile.city %></p>
 <p><%= @profile.country %></p>
 <p><%= @profile.website %></p>
 <%= @profile.bio %>
+
+
+<h2>Designs</h2>
+
+
+
+<!-- Hier komen de designs van de user -->
