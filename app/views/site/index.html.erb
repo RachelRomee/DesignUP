@@ -1,33 +1,31 @@
 
 <div class="row home-wrapper">
   <!-- left column -->
-  <div class="column large-4">
-
-    <h1> DesignUP </h1>
-
-    <p><i class="fi-heart"></i></p>
-
+  <div class="column large-6">
 
 
   </div> <!-- END left column -->
 
   <!-- right column -->
-  <div class="column large-8">
-    <!-- Sign Up form - MOET NOG WORDEN GESTYLED & CUSTOMIZED naar Ruby-->
-    <form>
-        <div class="row column log-in-form">
-          <h4 class="text-center">Log in with you email account</h4>
-          <label>Email
-            <input type="text" placeholder="somebody@example.com">
-          </label>
-          <label>Password
-            <input type="text" placeholder="Password">
-          </label>
-          <input id="show-password" type="checkbox"><label for="show-password">Show password</label>
-          <p><a type="submit" class="button expanded">Log In</a></p>
-          <p class="text-center"><a href="#">Forgot your password?</a></p>
-        </div>
-      </form>
+  <div class="column large-6">
+    <p><i class="fi-heart home-heart-icon"></i></p>
+    <!-- Sign Up form-->
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email %></div>
+
+      <div><%= f.label :password %><br />
+      <%= f.password_field :password %></div>
+
+      <div><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></div>
+
+      <div class="button-special-div"><span class="center-button"><%= f.submit "Sign up", class: "button-special"  %></span></div>
+    <% end %>
+
+
     </div> <!-- END Sign Up -->
   </div> <!-- END right column -->
 </div>
