@@ -18,10 +18,14 @@
 }
 
 .pic-username {
-  position: absolute;
   padding-left: 5px;
 }
 
 h2 {
   margin-bottom: 0px;
+}
+
+.small-block-grid-3{
+  max-height:180px;
+  overflow:hidden;
 }
