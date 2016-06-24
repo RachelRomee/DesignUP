@@ -1,3 +1,20 @@
-<strong> Comments: </strong> <br>
+<br />
+<!-- list of comments -->
+<div class="callout small">
+  <h5><strong> Comments: </strong></h5>
+    <hr>
+    <% @post.comments.each do |c| %>
 
-<%= render @post.comments.comments %>
+    <p><%= c.comment %></p>
+    <p><em><%= link_to c.user.name %> - <%= c.created_at.strftime('%m/%d/%Y') %></em></p>
+    <p></p>
+    <hr>
+  <% end %>
+<!-- new comment -->
+  <%= form_tag post_comments_path( @post, :comment ), method: :post do %>
+  <div class="form-group">
+      <%= text_area_tag :comment, "", class:"form-control" %>
+  </div>
+  <%= submit_tag "Comment", class:"button" %>
+  <% end %>
+  </div>

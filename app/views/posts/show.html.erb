@@ -1,4 +1,4 @@
-<%= link_to "Back", posts_path, style: "float:left;"  %>
+
 <br>
 <br>
 
@@ -9,6 +9,7 @@
         </div>
 
     </div>
+
     <div class="small-4 columns">
     <h2 id="header-posts">My Cool Pictures</h2>
     <p id="title"><%= @post.title %></p>
@@ -18,11 +19,13 @@
     <%= link_to " " + @post.likes.count.to_s, post_likes_path( @post ), method: :post, class: "fi-like button #{btn_color}", disabled: !user_signed_in?  %>
   </p>
           <p><button type="button" class="success button"><i class="fi-torsos-all"></i></button><p>
-
-
-
-
-
-
+            <%= link_to "Back", posts_path, class: "button",   style: "float:left;"  %>
     </div>
+
+
+</div>
+<div class="row">
+  <div class="small-8 columns">
+    <%= render 'comments' %>
+  </div>
 </div>
