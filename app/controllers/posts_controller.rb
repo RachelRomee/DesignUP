@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
 
   def index
     @posts = Post.order(created_at: :desc)
@@ -13,17 +16,13 @@ class PostsController < ApplicationController
 
  def new
     @post = Post.new
-    authorize! :new, @post
     @post.user_id = params[:user_id]
+
 
  end
 
  def create
-    post = Post.new( post_params )
-    @post.user = current_user
-    authorize! :create, @post
-
-    if post.save
+    if @post.save
        redirect_to posts_path
     else
        render 'new'
@@ -56,7 +55,7 @@ end
 
 private
   def post_params
-      params.require( :post ).permit( :title, :description, :image, :user_id, user_attributes:[:name] )
+      params.require( :post ).permit( :title, :description, :image, :user_id, user_attributes:[:name], comment_attributes: [:comment] )
   end
 
 
