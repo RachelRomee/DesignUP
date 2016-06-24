@@ -1,4 +1,3 @@
-<% if !user_signed_in? %>
 
 <div class="row home-wrapper">
   <!-- left column -->
@@ -9,6 +8,7 @@
   </div> <!-- END left column -->
 
   <!-- right column -->
+  <% if !user_signed_in? %>
 
   <div class="column large-6">
     <p><i class="fi-heart home-heart-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fi-heart home-heart-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fi-heart home-heart-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fi-heart home-heart-icon"></i></p>
@@ -31,10 +31,14 @@
       <br />
       <div class="button-special-div" style="text-align:center;"><span class="center-button"><%= f.submit "Sign up", class: "button-special"  %></span></div>
     <% end %>
+<% end %>
+<% if user_signed_in? %>
+<div class="column large-6">
 
+<img src="https://d13yacurqjgara.cloudfront.net/users/215249/screenshots/2575539/octo-loader.gif" />
 
+</div>
+<% end %>
     </div> <!-- END Sign Up -->
   </div> <!-- END right column -->
 </div>
-
-<% end %>
