@@ -1,21 +1,32 @@
-<h1>Profiles#show</h1>
-
 <!-- Should only be for own profile! -->
 <%= link_to "Edit", edit_profile_path(@profile), class: "button", style: "float: right" %>
 
+<h1><%= @profile.user.name %></h1>
 
-<%= image_tag @profile.image %>
+<%= image_tag @profile.image.thumbnail.url if @profile.image.present? %>
 
-<p><%= @profile.user %></p>
-<p><%= @profile.expertise %></p>
-<p><%= @profile.city %></p>
-<p><%= @profile.country %></p>
-<p><%= @profile.website %></p>
-<%= @profile.bio %>
+<br />
+<p><span class="profile-heading">Expertise </span><%= @profile.expertise %></p>
+<p><span class="profile-heading">City </span><%= @profile.city %></p>
+<p><span class="profile-heading">Country </span><%= @profile.country %></p>
+<p><span class="profile-heading">Website </span><%= @profile.website %></p>
+<span class="profile-heading">Bio </span><%= @profile.bio %>
 
-
-<h2>Designs</h2>
-
-
+<br />
+<br />
+<br />
 
 <!-- Hier komen de designs van de user -->
+<h2>Designs</h2>
+<div class="row">
+  <div class="large-12 columns">
+    <% @profile.user.posts.each do |post| %>
+      <div class="large-4 columns">
+        <div class="user-posts">
+          <%= image_tag post.image.thumbnail.url if post.image.present? %>
+          <p><%= post.title %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

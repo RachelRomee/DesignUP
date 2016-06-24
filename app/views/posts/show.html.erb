@@ -7,12 +7,22 @@
       <div class="column">
         <%= image_tag(@post.image) %>
         </div>
+
     </div>
     <div class="small-4 columns">
     <h2 id="header-posts">My Cool Pictures</h2>
     <p id="title"><%= @post.title %></p>
     <p><%=  @post.description %></p>
-    <p><button type="button" class="success button"> <i class="fi-like"></i></button><p>
+    <p><% liked = Like.find_by( post: @post, user: current_user ) != nil %>
+    <% btn_color = liked ? "warning" : "succes button" %>
+    <%= link_to " " + @post.likes.count.to_s, post_likes_path( @post ), method: :post, class: "fi-like button #{btn_color}", disabled: !user_signed_in?  %>
+  </p>
           <p><button type="button" class="success button"><i class="fi-torsos-all"></i></button><p>
+
+
+
+
+
+
     </div>
 </div>
