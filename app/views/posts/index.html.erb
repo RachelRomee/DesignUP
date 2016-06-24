@@ -1,12 +1,19 @@
 <% if can? :update, :new, :create, Post %>
 <% end %>
 
-<div class = "large-6 columns center">
 <h1> Explore </h1>
+<div class="row">
+  <div class="large-12 columns">
   <% @posts.each do |post| %>
-  <div class>
+
       <a href="<%= post_path post%>">
+
+         <div class="large-4 columns" >
+           <ul class="small-block-grid-3">
       <%= cl_image_tag(post.image.thumbnail.url :class => "feed") %> <br>
+    </ul>
+      <ul class="small-block-grid-3">
+
         <strong><%= post.title %><strong></a> - <em class = "pic-username"><%= post.user.name unless post.user.blank?%></em></p>
           <!-- <a href="<%= post_path post%>"> <p><%= post.description %> </a> -->
 
@@ -15,9 +22,13 @@
             <% btn_color = liked ? "warning" : "default" %>
             <%= link_to post.likes.count.to_s + " Likes", post_likes_path( post ), method: :post, class: "button #{btn_color}", disabled: !user_signed_in? %>
         </p>
+      </ul>
+
         <!-- End Like Button -->
-      </a> </div>
+      </div>
+      </a>
   <% end %>
-</ul>
+
+</div>
 </div>
 </div>
