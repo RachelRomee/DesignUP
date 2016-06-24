@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   end
 
   resources :profiles
-  resources :comments
+
 
   resources :posts do
     resources :likes
+    resources :comments
   end
 
   resources :relationships,       only: [:create, :destroy]
