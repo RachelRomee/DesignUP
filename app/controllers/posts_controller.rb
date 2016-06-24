@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    
+
   end
 
 
@@ -53,8 +53,6 @@ class PostsController < ApplicationController
 
    @likes = @user.likes.joins( :post ).order( "posts.created_at DESC" )
 end
-
-
 
 private
   def post_params

@@ -1,10 +1,18 @@
 <!-- Form for adding profile info -->
-<%= form_for @profile do |f| %>
-<div><%= hidden_field_tag :user_id, :value => @post.user_id%>
+<%= form_for(@profile, type: :file) do |f| %>
+
+
 
   <!-- Row for complete form -->
   <div class="row">
     <div class="small-12">
+      <!-- Row file upload -->
+      <div class="row">
+        <div class="small-6 columns">
+          <%= f.label :image, class: "right inline" %>
+          <%= f.file_field :expertise %>
+        </div>
+      </div>
       <!-- Row for expertise -->
       <div class="row">
         <div class="small-6 columns">

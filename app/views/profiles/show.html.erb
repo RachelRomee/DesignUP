@@ -1,10 +1,10 @@
-<h1>Profiles#show</h1>
+<h1><%= @profile.user.name if @profile.user %></h1>
 
 <!-- Should only be for own profile! -->
 <%= link_to "Edit", edit_profile_path(@profile), class: "button", style: "float: right" %>
 
 
-<%= image_tag @profile.image %>
+<%= image_tag @profile.image.url if @profile.image.present? %>
 
 <p><%= @profile.user %></p>
 <p><%= @profile.expertise %></p>
@@ -15,7 +15,5 @@
 
 
 <h2>Designs</h2>
-
-
 
 <!-- Hier komen de designs van de user -->

@@ -1,7 +1,5 @@
 class ProfilesController < ApplicationController
 
-  before_action :authenticate_user!
-
   def index
     @profiles = Profile.all
   end
@@ -12,12 +10,12 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = Profile.find(params[:id])
-    authorize! :edit, profile
+    # authorize! :edit, profile
   end
 
   def update
-    @profile = Profile.find( params[:id] )
-    authorize! :update, profile
+    @profile = Profile.find( params[:id])
+    # authorize! :update, profile
 
     if @profile.update_attributes( post_params )
       redirect_to @profile
@@ -26,9 +24,11 @@ class ProfilesController < ApplicationController
     end
   end
 
-  # def user
-  #   @user =
-  # end
+  def user
+    @user = User.find(params[:user_id])
+
+
+  end
 
    private
 
