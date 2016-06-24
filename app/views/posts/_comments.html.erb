@@ -1,3 +1,9 @@
 <strong> Comments: </strong> <br>
 
-<%= render @post.comments.comments %>
+<!-- list of comments -->
+<% @post.comments.each do |c| %>
+<%= c.comment %>
+<% end %>
+
+
+<!-- new comment -->

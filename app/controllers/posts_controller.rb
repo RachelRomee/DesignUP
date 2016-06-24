@@ -17,8 +17,6 @@ class PostsController < ApplicationController
  def new
     @post = Post.new
     @post.user_id = params[:user_id]
-
-
  end
 
  def create

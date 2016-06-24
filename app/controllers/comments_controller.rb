@@ -1,20 +1,16 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
-  def show
-  end
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
 
+  def create
+     post = Post.find( params[:post_id] )
 
-    def create
-       post = Post.find( params[:post_id] )
+     comment = Comment.new(post: post, user: current_user, comment: post_params[:comment] )
 
-       @comment = Comment.new( comment: post_params[:comment] )
+     comment.save
 
-          if @comment.save
-             redirect_to post_path
-          else
-             render post_path
-          end
-       end
-  end
+     redirect_to post_path
+
+end
