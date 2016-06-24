@@ -1,3 +1,4 @@
+<% if !user_signed_in? %>
 
 <div class="row home-wrapper">
   <!-- left column -->
@@ -7,7 +8,7 @@
   </div> <!-- END left column -->
 
   <!-- right column -->
-  <div class="column large-6">
+  <div class="column large-6 center">
     <p><i class="fi-heart home-heart-icon"></i></p>
     <!-- Sign Up form-->
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -32,3 +33,5 @@
     </div> <!-- END Sign Up -->
   </div> <!-- END right column -->
 </div>
+
+<% end %>
