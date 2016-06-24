@@ -1,3 +1,4 @@
+<% if !user_signed_in? %>
 
 <div class="row home-wrapper">
   <!-- left column -->
@@ -8,6 +9,7 @@
   </div> <!-- END left column -->
 
   <!-- right column -->
+
   <div class="column large-6">
     <p><i class="fi-heart home-heart-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fi-heart home-heart-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fi-heart home-heart-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fi-heart home-heart-icon"></i></p>
     <br />
@@ -34,3 +36,5 @@
     </div> <!-- END Sign Up -->
   </div> <!-- END right column -->
 </div>
+
+<% end %>
