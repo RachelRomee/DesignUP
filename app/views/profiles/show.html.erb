@@ -1,4 +1,4 @@
-<h1><%= @profile.user.name if @profile.user %></h1>
+<h1><%= @profile.user.name %></h1>
 
 <!-- Should only be for own profile! -->
 <%= link_to "Edit", edit_profile_path(@profile), class: "button", style: "float: right" %>
@@ -6,7 +6,7 @@
 
 <%= image_tag @profile.image.url if @profile.image.present? %>
 
-<p><%= @profile.user %></p>
+
 <p><%= @profile.expertise %></p>
 <p><%= @profile.city %></p>
 <p><%= @profile.country %></p>
@@ -17,3 +17,7 @@
 <h2>Designs</h2>
 
 <!-- Hier komen de designs van de user -->
+<p><% @profile.user.posts.each do |post| %></p>
+
+  <%= image_tag post.image.url if post.image.present? %>
+<% end %>
