@@ -1,31 +1,31 @@
 <!-- Foundation topbar -->
-<div class="top-bar">
+<div class="top-bar green-top-bar">
   <!-- Left menu -->
-  <div class="top-bar-left">
-      <ul class="menu">
-        <h4 class="top-bar-title menu-brand">De<span id="signup">signUP</span></h1>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Posts", posts_path %></li>
-          <li><%= link_to "Profiles", profiles_path %></li>
+  <div class="top-bar-left green-top-bar">
+      <ul class="menu green-top-bar">
+        <h4 class="top-bar-title menu-brand green-top-bar">DesignUP</h1>
+          <li class="green-top-bar"><%= link_to "Home", root_path %></li>
+          <li class="green-top-bar"><%= link_to "Posts", posts_path %></li>
+          <li class="green-top-bar"><%= link_to "Profiles", profiles_path %></li>
           <% if user_signed_in? %>
-          <li><%= link_to "New Post", new_post_path %></li>
+          <li class="green-top-bar"><%= link_to "New Post", new_post_path %></li>
           <% end %>
       </ul>
   </div>
   <!-- Right menu -->
-  <div class="top-bar-right">
-    <ul class="menu">
+  <div class="top-bar-right green-top-bar">
+    <ul class="menu green-top-bar">
       <!-- Search bar -->
       <% if user_signed_in? %>
-      <li><%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+      <li class="green-top-bar"><%= form_tag(posts_path, :method => "get", id: "search-form") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %></li>
-      <li>    <%= submit_tag "Search", class: "succes button search-button" %>
+      <li class="green-top-bar">    <%= submit_tag "Search", class: "succes button search-button" %>
           <% end %></li>  <% end %>
       <!-- Login, logout and username link to profile -->
       <% if !user_signed_in? %>
-          <li><%= link_to "Log In", new_user_session_path %></li>
+          <li class="green-top-bar"><%= link_to "Log In", new_user_session_path %></li>
       <% else %>
-          <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
+          <li class="green-top-bar"><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
     <% end %>
     </ul>
   </div>
