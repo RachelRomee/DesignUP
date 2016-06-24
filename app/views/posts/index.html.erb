@@ -9,12 +9,15 @@
       <a href="<%= post_path post%>">
 
          <div class="large-4 columns" >
-           <ul class="small-block-grid-3">
+           <div class="small-block-grid-3">
       <%= cl_image_tag(post.image.thumbnail.url :class => "feed") %> <br>
-    </ul>
-      <ul class="small-block-grid-3">
+    </div>
+      <div class="small-block-grid-3">
 
-        <strong><%= post.title %><strong></a> - <em class = "pic-username"><%= post.user.name unless post.user.blank?%></em></p>
+        <strong><%= post.title %><strong> -
+        <%= link_to post.user.profile do %>
+          <em class="pic-username" ><%= post.user.name unless post.user.blank?   %></em>
+        <% end %>
           <!-- <a href="<%= post_path post%>"> <p><%= post.description %> </a> -->
 
         <p>
@@ -22,7 +25,7 @@
             <% btn_color = liked ? "warning" : "default" %>
             <%= link_to post.likes.count.to_s + " Likes", post_likes_path( post ), method: :post, class: "button #{btn_color}", disabled: !user_signed_in? %>
         </p>
-      </ul>
+      </div>
 
         <!-- End Like Button -->
       </div>
