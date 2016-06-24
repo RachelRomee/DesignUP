@@ -3,29 +3,32 @@
 <div class="row home-wrapper">
   <!-- left column -->
   <div class="column large-6">
+    <img src="https://d13yacurqjgara.cloudfront.net/users/215249/screenshots/2575539/octo-loader.gif" />
 
 
   </div> <!-- END left column -->
 
   <!-- right column -->
-  <div class="column large-6 center">
-    <p><i class="fi-heart home-heart-icon"></i></p>
+
+  <div class="column large-6">
+    <p><i class="fi-heart home-heart-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fi-heart home-heart-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fi-heart home-heart-icon"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fi-heart home-heart-icon"></i></p>
+    <br />
     <!-- Sign Up form-->
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
-      <div><%= f.label :name %><br />
+      <div><%= f.label :name, class: "sign-form-title" %><br />
       <%= f.text_field :name %></div>
 
-      <div><%= f.label :email %><br />
+      <div><%= f.label :email, class: "sign-form-title" %><br />
       <%= f.email_field :email %></div>
 
-      <div><%= f.label :password %><br />
+      <div><%= f.label :password, class: "sign-form-title" %><br />
       <%= f.password_field :password %></div>
 
-      <div><%= f.label :password_confirmation %><br />
+      <div><%= f.label :password_confirmation, class: "sign-form-title" %><br />
       <%= f.password_field :password_confirmation %></div>
-
+      <br />
       <div class="button-special-div"><span class="center-button"><%= f.submit "Sign up", class: "button-special"  %></span></div>
     <% end %>
 

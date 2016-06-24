@@ -14,8 +14,17 @@
  *= require_self
  *= require foundation_and_overrides
  */
+
+.green-top-bar {
+  background-color: #AEFAE3;
+}
 h2 {
   color: black;
+}
+.sign-form-title{
+  font-weight: 400;
+  line-height: 0.2em;
+  letter-spacing: 0.15em;
 }
 
 .home-wrapper {
