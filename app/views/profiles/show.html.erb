@@ -1,16 +1,21 @@
 <!-- Should only be for own profile! -->
 <%= link_to "Edit", edit_profile_path(@profile), class: "button", style: "float: right" %>
 
-<h1><%= @profile.user.name %></h1>
+<div class="row">
+  <div class="columns small-6">
+    <h1><%= @profile.user.name %></h1>
+    <br />
+    <p><span class="profile-heading">Expertise </span><%= @profile.expertise %></p>
+    <p><span class="profile-heading">City </span><%= @profile.city %></p>
+    <p><span class="profile-heading">Country </span><%= @profile.country %></p>
+    <p><span class="profile-heading">Website </span><%= @profile.website %></p>
+    <span class="profile-heading">Bio </span><%= @profile.bio %>
 
-<%= image_tag @profile.image.thumbnail.url if @profile.image.present? %>
-
-<br />
-<p><span class="profile-heading">Expertise </span><%= @profile.expertise %></p>
-<p><span class="profile-heading">City </span><%= @profile.city %></p>
-<p><span class="profile-heading">Country </span><%= @profile.country %></p>
-<p><span class="profile-heading">Website </span><%= @profile.website %></p>
-<span class="profile-heading">Bio </span><%= @profile.bio %>
+  </div>
+  <div class="columns small-6">
+    <%= image_tag @profile.image.thumbnail.url if @profile.image.present? %>
+  </div>
+</div>
 
 <br />
 <br />
