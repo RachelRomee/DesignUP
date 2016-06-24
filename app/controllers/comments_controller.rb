@@ -4,6 +4,8 @@ class CommentsController < ApplicationController
   def show
   end
 
+
+
     def create
        post = Post.find( params[:post_id] )
 
