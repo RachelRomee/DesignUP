@@ -24,10 +24,10 @@ vacation = Post.create(title: "Vacation", remote_image_url: "http://res.cloudina
 bearhug = Post.create(title: "Bearhug", remote_image_url: "http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466597692/bearhug_voucxb.gif", description: "Animation", user_id: markus.id)
 
 
-Profile.create(user: jona, image: "jona.png", expertise: "Illustration, Game Art, UI/UX", city: "Berlin", country: "Germany", website: "http://jona.com", bio: "I am super creative")
-Profile.create(user: garrett, image: "garrett.png", expertise: "Design, Photography", city: "Washington DC", country: "USA", website: "http://heyitsgarrett.com/", bio: "I am super creative")
-Profile.create(user: julie, image: "julie.png", expertise: "Illustration, Design", city: "Moscow", country: "Russia", website: "http://julie.com", bio: "I am super creative")
-Profile.create(user: markus, image: "markus.png", expertise: "Animation, Motion Graphics", city: "Stockholm", country: "Sweden", website: "http://markusmagnusson.tv/", bio: "I am super creative")
+Profile.create(user: jona, remote_image_url: "http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466763053/jona_tbsnng.png", expertise: "Illustration, Game Art, UI/UX", city: "Berlin", country: "Germany", website: "http://jona.com", bio: "I am super creative")
+Profile.create(user: garrett, remote_image_url: "http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466763053/garrett_qaoaqy.png", expertise: "Design, Photography", city: "Washington DC", country: "USA", website: "http://heyitsgarrett.com/", bio: "I am super creative")
+Profile.create(user: julie, remote_image_url: "http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466763053/julie_a7u4fm.png", expertise: "Illustration, Design", city: "Moscow", country: "Russia", website: "http://julie.com", bio: "I am super creative")
+Profile.create(user: markus, remote_image_url: "http://res.cloudinary.com/dx6vo3hsg/image/upload/v1466763053/markus_sddobs.png", expertise: "Animation, Motion Graphics", city: "Stockholm", country: "Sweden", website: "http://markusmagnusson.tv/", bio: "I am super creative")
 
 Comment.create([
   {comment: "Great design", user_id: markus.id, post_id: scandinavia_club.id},
