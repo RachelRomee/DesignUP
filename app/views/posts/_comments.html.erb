@@ -6,7 +6,7 @@
     <% @post.comments.each do |c| %>
 
     <p><%= c.comment %></p>
-    <p><em><%= link_to c.user.name %> - <%= c.created_at.strftime('%m/%d/%Y') %></em></p>
+    <p><em><%= link_to c.user %> - <%= c.created_at.strftime('%m/%d/%Y') %></em></p>
     <p></p>
     <hr>
   <% end %>
