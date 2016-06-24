@@ -9,4 +9,10 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :likes
 
 
+  def self.search(search)
+    where("title ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%"   )
+
+
+  end
+
 end
