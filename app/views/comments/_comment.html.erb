@@ -1,0 +1,5 @@
+
+<p><%= comment.comment %></p>
+<p><em><%= link_to comment.user.name unless comment.user.blank? %> - <%= comment.created_at.strftime('%m/%d/%Y') %></em></p>
+<p></p>
+<hr>
