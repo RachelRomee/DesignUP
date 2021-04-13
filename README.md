@@ -13,7 +13,6 @@ Cool stuf we learned from this project include:
 ###Team: 
 - [Rachel van der Laan](https://github.com/RachelRomee)
 - [Ramon Hofmeister](https://github.com/ramonavic)
-- [Chiho Liu](https://github.com/Chiholiu)
 
 ###Todo: 
 
